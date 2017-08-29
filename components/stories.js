@@ -7,16 +7,13 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 			stories.map((s, i) => (
 				<li key={s || i}>
 					<span className="score">
-						{s.score}
+						<img src={s.url} />
 					</span>
 					<span className="item">
-						<div><a href={s.url} target="_black">{s.title}</a></div>
+						<div><a>{s.name}</a></div>
 						<div className="info">
 							<span>
-								<Link href={`/user?id=${s.by}`}><a>{s.by} </a></Link>
-							</span>
-							<span>
-								| <Link href={`/comments?id=${s.id}`}><a>{s.descendants} comments</a></Link>
+								<a>{s.price}</a>
 							</span>
 						</div>
 					</span>
@@ -27,7 +24,7 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 		<footer>
 		{
 			page <= totalPage &&
-				<Link href={`${type}?page=${Number(page) + 1}`}><a>More stories</a></Link>
+				<Link href={`${type}?page=${Number(page) + 1}`}><a>More</a></Link>
 		}
 		</footer>
 		<style jsx>{`
@@ -48,6 +45,11 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 				width: 80px;
 				text-align: center;
 				margin-top: -10px;
+			}
+
+			img {
+				width: 50px;
+				height: 50px;
 			}
 
 			.item {

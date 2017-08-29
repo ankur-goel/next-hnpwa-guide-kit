@@ -2,8 +2,8 @@ const path = require('path')
 const express = require('express')
 const compression = require('compression')
 const next = require('next')
-const firebase = require('firebase')
-const hackernews = require('firebase-hackernews')
+
+const rosetta = require('./rosetta')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -13,10 +13,7 @@ const serve = (subpath, cache) => express.static(
 	{maxAge: cache && !dev ? 1000 * 60 * 60 * 24 * 30 : 0}
 )
 
-const hnservice = hackernews.init(firebase)
-
 app.prepare()
-	.then(() => hnservice.watch())
 	.then(() => {
 		const server = express()
 
@@ -25,9 +22,10 @@ app.prepare()
 		server.use('/service-worker.js', serve('./.next/service-worker.js', true))
 		server.use('/manifest.json', serve('./static/manifest.json', true))
 
-		server.get('/hackernews/*', (req, res) => {
-			hnservice.fetch(req.path)
+		server.get('/rosetta/*', (req, res) => {
+			rosetta.watch()
 				.then(data => {
+					console.log(data)
 					res.send(typeof data === 'number' ? String(data) : data)
 				})
 				.catch(err => {
