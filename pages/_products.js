@@ -1,12 +1,12 @@
 import React from 'react'
-import fetch from '../lib/fetch-stories'
+import fetch from '../lib/fetch-products'
 import Page from '../components/page'
-import Stories from '../components/stories'
+import Products from '../components/products'
 
 export default class extends React.Component {
 	static async getInitialProps({query, pathname}) {
 		if (pathname === '/') {
-			pathname = '/top'
+			pathname = '/products'
 		}
 
 		const page = query && query.page ? query.page : 0
@@ -15,10 +15,10 @@ export default class extends React.Component {
 	}
 
 	render() {
-		const {type, stories, page, totalPage} = this.props
+		const {type, products, page, totalPage} = this.props
 		return <Page>
-			<Stories type={type}
-				stories={stories}
+			<Products type={type}
+				products={products}
 				page={page}
 				totalPage={totalPage} />
 		</Page>

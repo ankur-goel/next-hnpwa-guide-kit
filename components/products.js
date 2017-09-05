@@ -1,31 +1,33 @@
 import Link from 'next/link'
 
-export default({type, stories, totalPage = 1, page = 1}) => (
+export default({type, products, totalPage = 1, page = 1}) => (
 	<div>
 		<ui>
 		{
-			stories.map((s, i) => (
-				<li key={s || i}>
-					<span className="score">
-						<img src={s.url} />
-					</span>
-					<span className="item">
-						<div><a>{s.name}</a></div>
-						<div className="info">
-							<span>
-								<a>{s.price}</a>
-							</span>
-						</div>
-					</span>
-				</li>
+			Object.keys(products).map(key => (
+				<Link href={`/product?id=${key}`}>
+					<li key={key}>
+						<span className="picture">
+							<img src={products[key].url} />
+						</span>
+						<span className="item">
+							<div><a>{products[key].name}</a></div>
+							<div className="info">
+								<span>
+									<a>{products[key].price}</a>
+								</span>
+							</div>
+						</span>
+					</li>
+				</Link>	
 			))
 		}
 		</ui>
 		<footer>
-		{
+		{/* {
 			page <= totalPage &&
 				<Link href={`${type}?page=${Number(page) + 1}`}><a>More</a></Link>
-		}
+		} */}
 		</footer>
 		<style jsx>{`
 			li {
@@ -36,11 +38,9 @@ export default({type, stories, totalPage = 1, page = 1}) => (
 				line-height: 20px;
 			}
 
-			.score {
-				font-size: 18px;
-				font-weight: 700;
+			.picture {
 				position: absolute;
-				top: 50%;
+				top: 35%;
 				left: 0;
 				width: 80px;
 				text-align: center;

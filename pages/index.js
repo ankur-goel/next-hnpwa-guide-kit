@@ -1,3 +1,3 @@
-import Stories from './_stories'
+import Products from './_products'
 
-export default Stories
+export default Products

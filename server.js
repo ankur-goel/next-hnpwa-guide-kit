@@ -23,9 +23,8 @@ app.prepare()
 		server.use('/manifest.json', serve('./static/manifest.json', true))
 
 		server.get('/rosetta/*', (req, res) => {
-			rosetta.watch()
+			rosetta.fetch(req.path)
 				.then(data => {
-					console.log(data)
 					res.send(typeof data === 'number' ? String(data) : data)
 				})
 				.catch(err => {
