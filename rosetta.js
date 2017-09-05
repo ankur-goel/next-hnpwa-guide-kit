@@ -1,6 +1,6 @@
 const firebase = require('firebase')
 
-const myapp = firebase.initializeApp({databaseURL: "https://rosetta-126210.firebaseio.com"}, 'rosetta')
+const myapp = firebase.initializeApp({databaseURL: "https://rosetta-27cca.firebaseio.com"}, 'rosetta')
 const mydb = myapp.database()
 
 exports.watch = function() {

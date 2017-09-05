@@ -19,7 +19,7 @@ export default class extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="icon" href="/static/favicon.ico" />
 					<link rel="manifest" href="/manifest.json" />
-					<title>HNPWA with Next.js</title>
+					<title>E-commerce PWA with Next.js</title>
 				</Head>
 				<body className="custom_class">
 					<Main />
