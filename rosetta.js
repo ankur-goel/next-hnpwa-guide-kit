@@ -5,7 +5,7 @@ const mydb = myapp.database()
 
 _fetchProducts = function() {
     return new Promise(resolve => {
-        const ref = mydb.ref('/products');
+        const ref = mydb.ref('/products')
         ref.on('value', snapshot => {
             resolve(snapshot.val())
         })
@@ -14,7 +14,7 @@ _fetchProducts = function() {
 
 _fetchProductById = function(key) {
     return new Promise(resolve => {
-        const ref = mydb.ref('/products/').orderByKey().equalTo(`${key}`);
+        const ref = mydb.ref('/products/').orderByKey().equalTo(`${key}`)
         ref.on('value', snapshot => {
             resolve(snapshot.val()[key])
         })

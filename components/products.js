@@ -8,7 +8,7 @@ export default({type, products, totalPage = 1, page = 1}) => (
 				<Link href={`/product?id=${key}`}>
 					<li key={key}>
 						<span className="picture">
-							<img src={products[key].url} />
+							<img src={products[key].url} alt />
 						</span>
 						<span className="item">
 							<div><a>{products[key].name}</a></div>
