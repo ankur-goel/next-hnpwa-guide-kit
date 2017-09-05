@@ -4,6 +4,7 @@ export default({product}) => (
 		<ul>
 			<li>{product.name}</li>
 			<li className="price">{product.price}</li>
+			<li className={product.available === 'true' ? 'in-stock' : 'out-of-stock'}>{product.available === 'true' ? 'In stock' : 'Out of stock'}</li>
 		</ul>
 		<style jsx>{`
 			ul {
@@ -25,6 +26,12 @@ export default({product}) => (
 			}
 			.price {
 				color: gray;
+			}
+			.in-stock {
+				color: green;
+			}
+			.out-of-stock {
+				color: red;
 			}
 		`}</style>
 	</div>
