@@ -5,10 +5,6 @@ import Products from '../components/products'
 
 export default class extends React.Component {
 	static async getInitialProps({query, pathname}) {
-		if (pathname === '/') {
-			pathname = '/products'
-		}
-
 		const page = query && query.page ? query.page : 0
 		const props = await fetch(pathname.substr(1), Number(page))
 		return props

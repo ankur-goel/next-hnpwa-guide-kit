@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
 const links = [
-	{href: '/', label: 'Fashion'}
+	{href: '/', label: '▲'},
+	{href: '/products', label: 'Fashion'}
 ]
 
 export default () => (
