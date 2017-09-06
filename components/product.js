@@ -16,7 +16,6 @@ export default({product}) => (
 				margin-right: auto;
 				padding-top: 20px;
 				height: 300px;
-				weight: 300px;
 			}
 			li {
 				list-style-type: none;

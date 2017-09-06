@@ -48,7 +48,6 @@ export default({type, products, totalPage = 1, page = 1}) => (
 			}
 
 			img {
-				width: 50px;
 				height: 50px;
 			}
 
