@@ -3,9 +3,9 @@ const firebase = require('firebase')
 const myapp = firebase.initializeApp({databaseURL: "https://rosetta-27cca.firebaseio.com"}, 'rosetta')
 const mydb = myapp.database()
 
-_fetchProducts = function() {
+_fetchProductsByCategory = function(category) {
     return new Promise(resolve => {
-        const ref = mydb.ref('/products')
+        const ref = mydb.ref('/products').orderByChild('category').equalTo(category)
         ref.on('value', snapshot => {
             resolve(snapshot.val())
         })
@@ -14,7 +14,7 @@ _fetchProducts = function() {
 
 _fetchProductById = function(key) {
     return new Promise(resolve => {
-        const ref = mydb.ref('/products/').orderByKey().equalTo(`${key}`)
+        const ref = mydb.ref('/products/').orderByKey().equalTo(key)
         ref.on('value', snapshot => {
             resolve(snapshot.val()[key])
         })
@@ -27,8 +27,8 @@ exports.fetch = function(path) {
         const type = subpath[0]
         const param = subpath[1]
 
-        if (type === 'products') {
-            return _fetchProducts().then(resolve)
+        if (type === 'fashion' || type === 'electronics') {
+            return _fetchProductsByCategory(type).then(resolve)
         } else if (type === 'product') {
             return _fetchProductById(param).then(resolve)
         }

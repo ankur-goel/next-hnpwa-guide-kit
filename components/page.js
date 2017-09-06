@@ -5,7 +5,7 @@ import Nav from './nav'
 export default ({children}) => (
 	<main className="root">
 		<Nav />
-		<div className="stories">
+		<div className="tiles">
 			{children}
 		</div>
 		<style jsx>{`
@@ -14,14 +14,14 @@ export default ({children}) => (
 				font-family: Helvetica,sans-serif;
 			}
 
-			.stories {
+			.tiles {
 				width: 100%;
 				color: #333;
 				padding-top: 50px;
 			}
 
 			@media (max-width: 600px) {
-				.stories {
+				.tiles {
 					padding: 1px;
 					padding-top: 50px;
 					width: auto;

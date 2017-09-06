@@ -9,11 +9,17 @@ export default class extends React.Component {
 	render() {
 		return <Page>
 			<div>
-                <h2>Welcome to E-commerce PWA!</h2>
+                <img src='static/img/rosetta-512x512.png' alt />
                 <style jsx>{`
-					h2 {
-                        text-align: center;
-                    }
+					img {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 100px;
+						height: 100px;
+						margin-top: -50px;
+						margin-left: -50px;
+					}
                 `}</style>
             </div>
 		</Page>
