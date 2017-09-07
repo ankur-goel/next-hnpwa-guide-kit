@@ -54,30 +54,10 @@ export default({type, products, totalPage = 1, page = 1}) => (
 			.item {
 				flex-grow: 100;
 				text-align: left;
-				font-size: 18px;
-			}
-
-			.item a {
-				color: #0e0e0e;
-				text-decoration: none;
-			}
-
-			.item a:hover {
-				color: #0e0e0e;
-				text-decoration: underline;
 			}
 
 			.info a {
-				color: gray;
-				text-decoration: none;
-			}
-
-			.info a:hover {
-				text-decoration: underline;
-			}
-
-			.info {
-				font-size: 14px;
+				color: navy;
 			}
 
 			footer {

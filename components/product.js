@@ -3,6 +3,7 @@ export default({product}) => (
 		<img src={product.url} alt />
 		<ul>
 			<li>{product.name}</li>
+			<li>{product.rating} stars</li>
 			<li className="price">{product.price}</li>
 			<li className={product.available === 'true' ? 'in-stock' : 'out-of-stock'}>{product.available === 'true' ? 'In stock' : 'Out of stock'}</li>
 		</ul>
@@ -24,7 +25,7 @@ export default({product}) => (
 				padding: 0 20px;
 			}
 			.price {
-				color: gray;
+				color: navy;
 			}
 			.in-stock {
 				color: green;
