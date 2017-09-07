@@ -1,21 +1,21 @@
 {
-  "name": "Next.js E-commerce",
-  "short_name": "Next.js E-commerce",
+  "name": "Rosetta",
+  "short_name": "Rosetta",
   "icons": [
     {
-      "src": "/static/img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/static/img/icons/rosetta-chrome-128x128.png",
+      "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "/static/img/icons/android-chrome-512x512.png",
+      "src": "/static/img/icons/rosetta-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#F5F5F5",
   "theme_color": "#4DBA87"
 }
 

@@ -9,7 +9,7 @@ export default class extends React.Component {
 	render() {
 		return <Page>
 			<div>
-                <img src='static/img/rosetta-512x512.png' alt />
+                <img src='static/img/icons/rosetta-chrome-512x512.png' alt />
                 <style jsx>{`
 					img {
 						position: absolute;
