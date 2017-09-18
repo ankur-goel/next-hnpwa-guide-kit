@@ -1,6 +1,9 @@
 {
-  "name": "next-hn-prime-kit",
-  "version": "1.0.2",
+  "name": "rosetta",
+  "version": "0.0.1",
+  "author": "agoel43@sapient.com",
+  "license": "ISC",
+  "keywords": ["react", "next.js", "firebase", "workbox", "e-commerce", "pwa"],
   "engines": {
     "node": "^8.1.0"
   },
