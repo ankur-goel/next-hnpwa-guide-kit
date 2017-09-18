@@ -1,6 +1,6 @@
-# rosetta
+# Rosetta
 
-> Rosetta is a mobile-first e-commerce PWA built using React, Next.js, Firebase and Workbox.
+> Rosetta is a mobile-first e-commerce PWA built using React, Next.js, Firebase and Workbox. The app currently supports product list, categorization and product detail features.
 
 ## Getting Started
 
